@@ -160,7 +160,7 @@ p:last-child { margin-bottom: 0; }
   padding: 0.75em 1.1em; cursor: pointer;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1000px) {
   .nav-toggle { display: block; }
   .nav {
     display: none;
@@ -227,6 +227,9 @@ p:last-child { margin-bottom: 0; }
   .split .frame { margin-right: 18px; }
   .split .frame--left { margin: 0 0 0 18px; }
 }
+
+.phone { display: block; justify-self: center; max-width: 280px; }
+.phone img { width: 100%; mix-blend-mode: multiply; }
 
 /* ---------- Three areas ---------- */
 .areas {

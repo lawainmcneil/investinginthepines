@@ -29,6 +29,7 @@ const NAV = [
   ["about.html", "About"],
   ["how-i-work.html", "How I Work"],
   ["what-i-do.html", "What I Do"],
+  ["insurance.html", "Insurance"],
   ["insights.html", "Insights"],
 ];
 
@@ -112,6 +113,7 @@ ${body}
             <li><a href="about.html">About Peter</a></li>
             <li><a href="how-i-work.html">How I Work</a></li>
             <li><a href="what-i-do.html">What I Do</a></li>
+            <li><a href="insurance.html">Insurance</a></li>
             <li><a href="insights.html">Insights</a></li>
           </ul>
         </div>
@@ -558,9 +560,9 @@ pages.push({
             <span class="eyebrow">iii. Looking after those you love</span>
             <h2>&ldquo;Will my family be taken care of?&rdquo;</h2>
             <p>Much of financial planning is really about other people: a spouse, children, grandchildren, the causes you care for. I help you think through what you&rsquo;d like to happen and coordinate with the professionals who put it on paper.</p>
-            <p>Life insurance is often part of that conversation. If you&rsquo;d like a sense of what term coverage might cost, the Ethos estimator asks a few basic questions and gives you a figure. If you like what you see, I can help with the next steps.</p>
+            <p>Life insurance is often part of that conversation. If you&rsquo;d like a sense of what term coverage might cost, the Ethos Estimator asks a few basic questions and gives you a figure.</p>
             <div class="actions">
-              <a class="textlink" href="${ETHOS}" ${ext}>Try the Ethos life insurance estimator</a>
+              <a class="textlink" href="insurance.html">More about life insurance</a>
             </div>
             <p class="note">Insurance services offered through Peter Kisver are independent of Kiaros Advisors, LLC.</p>
           </div>
@@ -578,6 +580,86 @@ pages.push({
       </section>
     </div>
 ${closing("Not sure where your question fits?", "That&rsquo;s perfectly fine. Most first conversations begin that way.")}`,
+});
+
+/* ------------------------------------------------------------- Insurance */
+pages.push({
+  file: "insurance.html",
+  title: "Life Insurance | Kiaros Advisors, Pinehurst NC",
+  description:
+    "Life insurance protects the people who depend on you. See what term coverage could cost with the Ethos Estimator, then talk it through with Peter Kisver in Pinehurst, NC.",
+  body: `
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Insurance</span>
+        <h1>If someone depends on you, it matters.</h1>
+        <p class="lede">Life insurance isn&rsquo;t just about covering funeral costs. It&rsquo;s about protecting your family&rsquo;s financial future, and making sure the people who rely on you most are taken care of, no matter what happens.</p>
+      </div>
+    </section>
+
+    <section class="section section--sand" id="ethos">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Ethos Estimator</span>
+          <h2>See how affordable life insurance could be for you and your family.</h2>
+          <p>Term life insurance is an affordable option for many families. The Ethos Estimator shows what it could cost after a few basic questions.</p>
+          <p>If you like what you see, I can help you take the next steps to being covered.</p>
+          <div class="actions">
+            <a class="btn" href="${ETHOS}" ${ext}>Open the Ethos Estimator</a>
+          </div>
+          <p class="note">The estimator opens on the Ethos website. Insurance services offered through Peter Kisver are independent of Kiaros Advisors, LLC.</p>
+        </div>
+        <a class="phone" href="${ETHOS}" ${ext} aria-label="Open the Ethos Estimator">
+          <img src="assets/img/ethos-estimator.png" alt="The Ethos Estimator on a phone, asking a simple question about height" width="520" height="1057" loading="lazy">
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split split--top">
+        <div>
+          <span class="eyebrow">Do you need it?</span>
+          <h2>Three questions worth asking yourself.</h2>
+          <p>A well-thought-out life insurance plan can provide a safety net that gives your loved ones time to heal, adapt, and move forward without financial strain. Whether you need one usually comes down to who is counting on you.</p>
+        </div>
+        <div>
+          <ul class="topics">
+            <li>Do you have dependents who rely on your income?</li>
+            <li>Would your spouse or kids struggle financially if something happened to you?</li>
+            <li>Do you have debt that would become someone else&rsquo;s problem?</li>
+          </ul>
+          <p style="margin-top:1.6rem">If you answered yes to any of these, it&rsquo;s worth a conversation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--pine">
+      <div class="wrap">
+        <div class="narrow">
+          <span class="eyebrow">Keeping it simple</span>
+          <h2>The right coverage, clearly explained.</h2>
+        </div>
+        <div class="pairs">
+          <div>
+            <h3>Term life insurance</h3>
+            <p>Coverage for a set number of years, typically the ones when your family depends on your income most. It is often an affordable solution for most families.</p>
+          </div>
+          <div>
+            <h3>Whole life insurance</h3>
+            <p>That&rsquo;s another debate. It can have a place, but make sure you understand the costs and benefits before signing on the dotted line.</p>
+          </div>
+          <div>
+            <h3>Part of the plan</h3>
+            <p>Insurance works best when it&rsquo;s considered alongside your savings, your debts, and your goals, not sold on its own.</p>
+          </div>
+          <div>
+            <h3>No pressure</h3>
+            <p>I&rsquo;ll help you understand your options and what they cost. Whether you move forward, and when, is up to you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+${closing("Have questions about coverage?", "Try the estimator, or call me and we&rsquo;ll talk through what makes sense for your family.")}`,
 });
 
 /* -------------------------------------------------------------- Insights */

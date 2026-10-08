@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Your Money, Your Future | Kiaros Advisors</title>
+<meta name="author" content="Peter Kisver, Kiaros Advisors">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* Print source for the guide PDF. See guide/README.md for how to regenerate it. */
+  :root {
+    --pine: #30483e; --pine-deep: #24372f; --ivory: #f7f4ed; --sand-soft: #ebe4d6;
+    --sandstone: #d8ccb6; --charcoal: #353936; --bronze: #a48b68; --bronze-ink: #7a6444;
+    --rule: rgba(53, 57, 54, 0.18);
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Source Sans 3", "Lato", sans-serif;
+  }
+
+  @page { size: Letter; margin: 0; }
+
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html { background: var(--ivory); }
+  body { margin: 0; color: var(--charcoal); font: 400 11pt/1.6 var(--sans); counter-reset: pg 1; }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--pine); margin: 0; }
+  p { margin: 0 0 0.9em; }
+  strong { font-weight: 600; color: var(--pine-deep); }
+
+  /* ---- Cover and back ---- */
+  .full { position: relative; width: 8.5in; height: 11in; overflow: hidden; break-after: page; color: var(--ivory); background: var(--pine-deep); }
+  .full > img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .full::after { content: ""; position: absolute; inset: 0; background: var(--pine-deep); opacity: 0.66; }
+  .full .inner { position: absolute; inset: 0; z-index: 1; padding: 0.9in 1in; display: flex; flex-direction: column; }
+  .full .border { position: absolute; inset: 0.45in; border: 0.75pt solid rgba(216, 204, 182, 0.7); z-index: 1; }
+
+  .cover .logo { width: 1.9in; }
+  .cover .title { margin-top: auto; }
+  .kicker { font: 600 8.5pt var(--sans); letter-spacing: 0.26em; text-transform: uppercase; color: var(--sandstone); margin-bottom: 0.28in; }
+  .cover h1 { color: var(--ivory); font-size: 62pt; line-height: 0.98; letter-spacing: -0.01em; }
+  .cover .sub { font: italic 400 21pt/1.3 var(--serif); margin-top: 0.3in; max-width: 5in; }
+  .cover .by { margin-top: 0.9in; padding-top: 0.22in; border-top: 0.75pt solid rgba(216, 204, 182, 0.7); font: 600 8.5pt var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--sandstone); display: flex; justify-content: space-between; }
+
+  /* ---- Chapters ---- */
+  /* Each .page is one fixed Letter sheet; content is placed by hand so nothing spills. */
+  .page { position: relative; width: 8.5in; height: 11in; padding: 0.95in 1in 1.05in; overflow: hidden; break-after: page; display: flex; flex-direction: column; counter-increment: pg; }
+  .page > * { flex: none; }
+  .page::before { content: "Your Money, Your Future"; position: absolute; left: 1in; bottom: 0.5in; font: 600 7.5pt var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--bronze-ink); }
+  .page::after { content: counter(pg); position: absolute; right: 1in; bottom: 0.46in; font: italic 400 12pt var(--serif); color: var(--bronze-ink); }
+  .num { font: italic 400 15pt var(--serif); color: var(--bronze-ink); display: block; margin-bottom: 0.1in; }
+  .chapter h2 { font-size: 33pt; line-height: 1.06; margin-bottom: 0.08in; text-wrap: balance; }
+  .aside { font: italic 400 16pt/1.3 var(--serif); color: var(--bronze-ink); margin-bottom: 0.24in; }
+  .chapter h2 + p, .chapter h2 + .lede { margin-top: 0.3in; }
+  .rule { width: 0.6in; border: 0; border-top: 1pt solid var(--bronze); margin: 0.26in 0 0.3in; }
+  .lede { font-size: 13.5pt; line-height: 1.55; }
+  h3 { font-size: 19pt; margin: 0.34in 0 0.12in; break-after: avoid; }
+
+  ul { list-style: none; margin: 0 0 1em; padding: 0; }
+  li { position: relative; padding: 0.075in 0 0.075in 0.3in; border-top: 0.5pt solid var(--rule); break-inside: avoid; }
+  li:last-child { border-bottom: 0.5pt solid var(--rule); }
+  li::before { content: ""; position: absolute; left: 0.04in; top: 0.17in; width: 5pt; height: 5pt; border: 0.75pt solid var(--bronze); transform: rotate(45deg); }
+
+  .box { background: var(--sand-soft); padding: 0.26in 0.34in; margin: 0.26in 0; break-inside: avoid; }
+  .box h3 { margin-top: 0; }
+  .box ul { margin-bottom: 0; }
+  .box li { border-color: rgba(53, 57, 54, 0.14); }
+
+  .tight .lede { font-size: 12.5pt; }
+  .tight .box { margin: 0.2in 0 0; padding: 0.22in 0.34in; }
+  .tight li { padding-top: 0.06in; padding-bottom: 0.06in; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4in; margin: 0.3in 0; break-inside: avoid; }
+  .cols h3 { margin-top: 0; }
+
+  .pull { font: italic 400 21pt/1.28 var(--serif); color: var(--pine); border-left: 1.25pt solid var(--bronze); padding-left: 0.26in; margin: 0.34in 0; break-inside: avoid; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0.3in 0; border-top: 0.5pt solid var(--rule); border-bottom: 0.5pt solid var(--rule); break-inside: avoid; }
+  .stats > div { padding: 0.24in 0.22in 0.24in 0; }
+  .stats > div + div { border-left: 0.5pt solid var(--rule); padding-left: 0.22in; }
+  .stats .fig { font: 500 36pt/1 var(--serif); color: var(--pine); display: block; margin-bottom: 0.08in; }
+  .stats .lab { font: 600 7.5pt var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--bronze-ink); display: block; margin-bottom: 0.06in; }
+  .stats p { font-size: 10pt; line-height: 1.45; margin: 0; }
+
+  .page > .photo { flex: 1 1 0; min-height: 0; margin: 0.3in 0 0; }
+  .photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  .takeaways { counter-reset: t; margin: 0.3in 0; }
+  .takeaways div { counter-increment: t; display: grid; grid-template-columns: 0.6in 1fr; align-items: baseline; padding: 0.16in 0; border-top: 0.5pt solid var(--rule); font: 500 19pt/1.2 var(--serif); color: var(--pine); }
+  .takeaways div:last-child { border-bottom: 0.5pt solid var(--rule); }
+  .takeaways div::before { content: counter(t, decimal-leading-zero); font: italic 400 15pt var(--serif); color: var(--bronze); }
+
+  /* ---- Back page ---- */
+  .back { break-after: auto; }
+  .back h2 { color: var(--ivory); font-size: 46pt; line-height: 1.02; margin-bottom: 0.26in; }
+  .back .lede { max-width: 4.9in; color: rgba(247, 244, 237, 0.92); }
+  .contact { display: grid; grid-template-columns: 1fr auto; gap: 0.5in; align-items: end; margin-top: 0.55in; padding-top: 0.34in; border-top: 0.75pt solid rgba(216, 204, 182, 0.7); }
+  .contact .label { display: block; font: 600 7.5pt var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--sandstone); }
+  .contact .value { display: block; font: 500 21pt/1.2 var(--serif); margin-bottom: 0.2in; }
+  .qr { background: var(--ivory); padding: 0.13in; width: 1.5in; height: 1.5in; }
+  .qr img { display: block; width: 100%; height: 100%; }
+  .back .logo { width: 1.5in; margin-top: auto; }
+  .fine { font-size: 7.4pt; line-height: 1.5; color: rgba(247, 244, 237, 0.74); margin: 0.22in 0 0; }
+</style>
+</head>
+<body>
+
+<section class="full cover">
+  <img class="bg" src="../assets/img/longleaf-sunset.jpg" alt="">
+  <div class="border"></div>
+  <div class="inner">
+    <img class="logo" src="../assets/img/kiaros-logo-ivory.png" alt="Kiaros Advisors, LLC">
+    <div class="title">
+      <div class="kicker">A guide from Kiaros Advisors</div>
+      <h1>Your Money,<br>Your Future</h1>
+      <p class="sub">The importance of having a clear, written financial plan and roadmap</p>
+      <div class="by"><span>Pete Kisver</span><span>Pinehurst, North Carolina</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="page chapter">
+  <span class="num">i.</span>
+  <h2>Why you need a financial plan</h2>
+  <p class="aside">And no, &ldquo;winging it&rdquo; isn&rsquo;t a strategy.</p>
+  <p class="lede">Financial planning is the art of making intelligent choices about how to use your money. A financial plan considers your goals, your risk tolerance, and your time horizon, and it helps you reach both short-term and long-term goals by setting priorities, developing strategies, and monitoring progress.</p>
+  <p>Imagine trying to drive cross-country without GPS, road signs, or even a map. You might eventually get where you&rsquo;re going, but chances are you&rsquo;ll take a lot of wrong turns, waste time, and burn through gas money.</p>
+  <p>Your financial future is no different. A clear, written financial plan is your roadmap. It helps you navigate the road to retirement and financial security with confidence.</p>
+  <p class="pull">A solid financial plan isn&rsquo;t about selling you the latest hot investment or insurance policy. It&rsquo;s about helping you make informed decisions.</p>
+  <p>Unfortunately, many financial plans are presented as glorified sales pitches, pushing specific products rather than offering real guidance. Instead of serving as a true roadmap, they can feel like detours designed to benefit the seller more than the investor.</p>
+  <figure class="photo"><img src="../assets/img/pinehurst-street.jpg" alt=""></figure>
+</section>
+
+<section class="page chapter">
+  <span class="num">ii.</span>
+  <h2>What can you control? What can&rsquo;t you?</h2>
+  <hr class="rule">
+  <p class="lede">It&rsquo;s easy to assume that we have control over every aspect of our financial future. The reality is that many outside factors influence our investments, savings, and long-term plans.</p>
+  <p>The key to financial confidence isn&rsquo;t trying to control everything. It&rsquo;s knowing what you can manage, and planning effectively around what you can&rsquo;t. A strong financial strategy puts you in the driver&rsquo;s seat, with the knowledge and tools to navigate uncertainty and make informed decisions.</p>
+  <div class="cols">
+    <div>
+      <h3>Things you can&rsquo;t control</h3>
+      <ul>
+        <li>Stock market fluctuations</li>
+        <li>Interest rates</li>
+        <li>Inflation</li>
+        <li>The latest get-rich-quick scheme your cousin swears by</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Things you can</h3>
+      <ul>
+        <li>How much you save</li>
+        <li>How much you spend</li>
+        <li>How your money is diversified</li>
+        <li>How you react when markets get rough</li>
+      </ul>
+    </div>
+  </div>
+  <p class="pull">Focus on what you can control, and plan around what you can&rsquo;t.</p>
+</section>
+
+<section class="page chapter tight">
+  <span class="num">iii.</span>
+  <h2>How much is enough?</h2>
+  <p class="aside">Or: will you have to live off ramen in retirement?</p>
+  <p class="lede">A solid financial strategy starts with identifying what you want out of life and how much money each goal will require. You can&rsquo;t build a meaningful plan without first understanding why it&rsquo;s important to save or invest at all.</p>
+  <p>Investing requires discipline, patience, and time, not short-term gambles. By owning a diverse mix of stocks, you&rsquo;re investing in business growth and innovation around the world, and giving compounding the time it needs to work.</p>
+  <p>One of the biggest questions investors ask is, <em>&ldquo;How much money do I actually need?&rdquo;</em> The answer depends on your lifestyle, your retirement goals, and your spending habits.</p>
+  <p>The old adage <em>&ldquo;He who dies with the most toys wins&rdquo;</em> is not the goal of a happy life. It&rsquo;s about making sure that you and your loved ones can have the life you worked hard to achieve. Financial planning isn&rsquo;t just about accumulating wealth. It&rsquo;s about aligning your resources with your values and your hopes for the future.</p>
+  <p>Some financial planners point to the <strong>4% rule</strong>, a rule of thumb suggesting that if you have $1 million, you could withdraw about $40,000 a year in retirement. But is that enough? A financial plan helps answer questions like these with real numbers, so you&rsquo;re not left guessing.</p>
+  <div class="box">
+    <h3>The reality check</h3>
+    <ul>
+      <li>How much do you <em>really</em> spend now? (Netflix subscriptions add up!)</li>
+      <li>Will you have a mortgage or debt in retirement?</li>
+      <li>What about healthcare costs?</li>
+      <li>Do you want to leave money behind for family or charity?</li>
+    </ul>
+  </div>
+</section>
+
+<section class="page chapter">
+  <span class="num">iv.</span>
+  <h2>Should I be worried?</h2>
+  <p class="aside">Spoiler: panic is not an investment strategy.</p>
+  <p class="lede">Markets crash. Recessions happen. The media loves to fuel panic.</p>
+  <p>If you watch the news and listen to so-called financial experts, you&rsquo;d assume that either the market is in complete meltdown or that you&rsquo;re missing out on the biggest stock market run-up in the history of the world. The truth, as always, is somewhere in between.</p>
+  <p>But should you really be worried every time the stock market takes a dip? Let&rsquo;s look at history.</p>
+  <div class="stats">
+    <div><span class="lab">2008</span><span class="fig">&minus;37%</span><p>The S&amp;P 500&rsquo;s loss for the year. It rebounded to new highs within a few years.</p></div>
+    <div><span class="lab">March 2020</span><span class="fig">&minus;34%</span><p>A drop in just weeks. The market bounced back faster than expected.</p></div>
+    <div><span class="lab">The last century</span><span class="fig">~10%</span><p>The stock market&rsquo;s average annual return, despite wars, recessions, and pandemics.</p></div>
+  </div>
+  <p class="pull">The lesson? Volatility is normal. Long-term investors who stick to their plan tend to come out ahead.</p>
+  <figure class="photo"><img src="../assets/img/longleaf-canopy.jpg" alt=""></figure>
+</section>
+
+<section class="page chapter">
+  <span class="num">v.</span>
+  <h2>What about life insurance?</h2>
+  <p class="aside">Hint: if someone depends on you, it matters.</p>
+  <p class="lede">Life insurance isn&rsquo;t just about covering funeral costs. It&rsquo;s about protecting your family&rsquo;s financial future.</p>
+  <p>Imagine this. A friend of mine, Mark, had always been the primary provider for his wife and two young children. He was healthy, successful, and never thought much about life insurance. One day, out of nowhere, a sudden illness took him from his family. Without a proper life insurance policy in place, his wife was left scrambling to cover mortgage payments, child care, and daily expenses, all while grieving his loss.</p>
+  <p>Mark&rsquo;s story is a heartbreaking reminder that financial security isn&rsquo;t just about the here and now. It&rsquo;s about ensuring that the people who rely on you the most are taken care of, no matter what happens. A well-thought-out life insurance plan can provide a safety net that gives your loved ones time to heal, adapt, and move forward without financial strain.</p>
+  <div class="box">
+    <h3>Ask yourself</h3>
+    <ul>
+      <li>Do you have dependents who rely on your income?</li>
+      <li>Would your spouse or kids struggle financially if something happened to you?</li>
+      <li>Do you have debt that would become someone else&rsquo;s problem?</li>
+    </ul>
+  </div>
+  <p>Term life insurance is often an affordable solution for most families. Whole life insurance? That&rsquo;s another debate. Just make sure you understand the costs and benefits before signing on the dotted line.</p>
+</section>
+
+<section class="page chapter">
+  <span class="num">vi.</span>
+  <h2>What do I do with my 401(k)?</h2>
+  <p class="aside">Besides forgetting about it.</p>
+  <p class="lede">Your 401(k) is a major tool for retirement, but it&rsquo;s often difficult to understand and to make the most of.</p>
+  <p>Many employees sign up for their company&rsquo;s plan, select a default investment option, and then forget about it. Taking a more proactive approach can make a significant difference in your retirement outcomes.</p>
+  <h3>Making the most of your 401(k)</h3>
+  <ul>
+    <li><strong>Understand your plan.</strong> Read through your employer&rsquo;s 401(k) offerings, including investment options, fees, and employer match programs.</li>
+    <li><strong>Contribute enough to get your company match.</strong> It&rsquo;s free money. Don&rsquo;t leave it on the table!</li>
+    <li><strong>Increase contributions over time.</strong> Even 1% more per year makes a difference in the long run.</li>
+    <li><strong>Diversify your investments.</strong> Avoid putting all your eggs in one basket (or one stock). Consider a mix of stocks, bonds, and index funds.</li>
+    <li><strong>Rebalance periodically.</strong> Market fluctuations can shift your asset allocation over time, so review and adjust as needed.</li>
+    <li><strong>Don&rsquo;t cash out early.</strong> The penalties and taxes aren&rsquo;t worth it!</li>
+  </ul>
+  <p>Taking control of your 401(k) today can set you up for a more secure and comfortable retirement in the future.</p>
+</section>
+
+<section class="page chapter">
+  <span class="num">vii.</span>
+  <h2>How does Social Security fit into your plan?</h2>
+  <hr class="rule">
+  <p class="lede">Social Security is a key component of retirement income, but it&rsquo;s not designed to cover all your expenses.</p>
+  <p>It provides a foundation of income, and you need a strategy for how it fits into your overall retirement picture. That includes when to claim benefits, how they affect your taxes, and how they work alongside other income sources such as pensions, 401(k)s, and investments. A well-thought-out financial plan also uses tax-efficient strategies, so more of what you&rsquo;ve saved is there for retirement.</p>
+  <h3>What you need to know</h3>
+  <ul>
+    <li>Your benefit amount depends on your <strong>earnings history</strong> and the <strong>age you start collecting</strong>.</li>
+    <li>Claiming before <strong>full retirement age (FRA)</strong> reduces your monthly benefit, while waiting until <strong>age 70</strong> can significantly increase it.</li>
+    <li>Social Security is <strong>not a standalone retirement plan</strong>. It should be a part of your broader financial strategy.</li>
+    <li>Taxes and spousal benefits can affect how much you actually receive.</li>
+  </ul>
+  <div class="box">
+    <h3>The big question: when should you claim?</h3>
+    <p style="margin:0">The best age to start Social Security depends on your financial situation, your health, and your expected longevity. If you need the money earlier, taking it at <strong>62</strong> may make sense. If you can wait, delaying benefits means a <strong>larger monthly check for life</strong>.</p>
+  </div>
+</section>
+
+<section class="page chapter">
+  <span class="num">viii.</span>
+  <h2>Are there financial landmines I&rsquo;m not aware of?</h2>
+  <p class="aside">Absolutely. And they&rsquo;re everywhere.</p>
+  <p class="lede">Life has a way of throwing unexpected financial challenges our way. You might feel like you&rsquo;re making all the right moves, saving diligently, investing wisely, and planning for the future, only to find hidden obstacles standing in your way.</p>
+  <p>Perhaps you&rsquo;ve experienced a surprise tax bill, an investment that didn&rsquo;t pan out, or lifestyle inflation creeping into your budget. These financial landmines can derail even the most well-intentioned plans. Here are a few big ones.</p>
+  <ul>
+    <li><strong>Lifestyle creep.</strong> When you start making more money, but your spending increases just as fast.</li>
+    <li><strong>Not having an emergency fund.</strong> Because life <em>will</em> throw curveballs.</li>
+    <li><strong>Chasing investment fads.</strong> Crypto, meme stocks, or anything &ldquo;too good to be true.&rdquo;</li>
+    <li><strong>Ignoring tax strategies.</strong> Paying Uncle Sam more than you need to.</li>
+  </ul>
+  <h3>Risk is more than losing money</h3>
+  <p>Risk also includes factors that are easy to overlook, like the effect of rising healthcare costs and inflation on long-term investments. To gauge investment risk, consider the standard deviation, which shows volatility. Less volatility means a smoother journey to your goals. And make sure your portfolio is truly diverse by comparing it with the historical returns of similar assets.</p>
+  <p>We can help you identify the risks in your portfolio and develop a plan to improve its chances of success.</p>
+</section>
+
+<section class="page chapter">
+  <span class="num">ix.</span>
+  <h2>Education savings</h2>
+  <p class="aside">Setting your kids up for success.</p>
+  <p class="lede">Higher education isn&rsquo;t cheap, and costs continue to rise. Having a savings plan can make all the difference.</p>
+  <p>You think trying to figure out the best education choices for your kids is enough? Try figuring out the myriad of financial options to invest in. The sheer number of savings vehicles, tax advantages, and potential pitfalls can be overwhelming. Understanding these options helps you make the best choices for your family&rsquo;s future.</p>
+  <h3>Options to consider</h3>
+  <ul>
+    <li><strong>529 plans.</strong> Tax-advantaged savings for education expenses.</li>
+    <li><strong>Coverdell ESAs.</strong> Great for K-12 and college expenses.</li>
+    <li><strong>Custodial accounts.</strong> More flexibility, but they may affect financial aid eligibility.</li>
+  </ul>
+  <p class="pull">Starting early means less financial stress when the tuition bills start rolling in.</p>
+  <figure class="photo"><img src="../assets/img/village-shops.jpg" alt=""></figure>
+</section>
+
+<section class="page chapter">
+  <span class="num">x.</span>
+  <h2>Your financial roadmap is peace of mind</h2>
+  <hr class="rule">
+  <p class="lede">A well-structured financial plan helps you avoid unnecessary stress, make smart decisions, and work toward long-term security.</p>
+  <p>It may feel overwhelming at first, but taking control of your financial future doesn&rsquo;t have to be intimidating. It may require some difficult but necessary conversations. But a solid plan acts like a bright floodlight in a dark cavern, cutting through confusion and financial anxiety.</p>
+  <p>With a clear roadmap, you can navigate the uncertainties of the financial world with confidence, knowing that each step you take is leading you toward security and peace of mind.</p>
+  <h3>Three quick takeaways</h3>
+  <div class="takeaways">
+    <div>Control what you can, plan around what you can&rsquo;t.</div>
+    <div>A written plan eliminates guesswork and fear.</div>
+    <div>Investing is a marathon, not a sprint. Stay the course.</div>
+  </div>
+  <p class="pull">Ignore Wall Street so you can live your life.</p>
+</section>
+
+<section class="full back">
+  <img class="bg" src="../assets/img/longleaf-canopy.jpg" alt="">
+  <div class="border"></div>
+  <div class="inner">
+    <div class="kicker">Got questions? Let&rsquo;s chat.</div>
+    <h2>Let&rsquo;s start a conversation.</h2>
+    <p class="lede">No pressure, no sales pitch. Just an honest conversation to explore what makes sense for you and your future. Your financial journey is unique, and I&rsquo;m here to help you figure out the best path forward.</p>
+    <div class="contact">
+      <div>
+        <span class="label">Phone</span><span class="value">910-420-0352</span>
+        <span class="label">Email</span><span class="value">pkisver@kiarosadvisors.com</span>
+        <span class="label">Online</span><span class="value" style="margin:0">investinginthepines.com</span>
+      </div>
+      <div class="qr"><img src="qr.svg" alt="QR code for investinginthepines.com"></div>
+    </div>
+    <img class="logo" src="../assets/img/kiaros-logo-ivory.png" alt="Kiaros Advisors, LLC">
+    <p class="fine">Disclosure: This material is for informational purposes only and does not constitute investment advice. Investing involves risk, including loss of principal. Past performance is not indicative of future results. Consult a qualified professional before making financial decisions. Kiaros Advisors is a registered investment advisor; registration does not imply a certain level of skill or expertise. The investment returns in this paper are hypothetical and for illustration purposes only. They do not constitute investment advice or offer for a sale. The returns do not take into account any fees or transaction costs. Investment advisory and financial planning services offered through Kiaros Advisors, LLC, a registered investment advisory firm. Insurance services offered through Peter Kisver are independent of Kiaros Advisors, LLC. Kiaros Advisors, LLC does not give legal or tax advice.</p>
+  </div>
+</section>
+
+</body>
+</html>

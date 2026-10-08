@@ -9,7 +9,7 @@ const PHONE = "910-420-0352";
 const EMAIL = "pkisver@kiarosadvisors.com";
 const FORM = "https://form.jotform.com/241065123487151";
 const FORM_ID = "241065123487151";
-const GUIDE = "https://drive.google.com/file/d/1ksR3P59dEwG6bX5nOfuxjIbrOfLYmkkx/view";
+const GUIDE = "assets/guide/Your-Money-Your-Future.pdf";
 const ETHOS = "https://agents.ethoslife.com/invite/bfaa5";
 
 // Newest first. Add each new issue to the top of this list.

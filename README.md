@@ -18,6 +18,14 @@ That rewrites the `.html` files and `sitemap.xml`. Commit the result.
 - **Styles:** `assets/css/site.css` (palette and fonts are variables at the top).
 - **Images:** `assets/img/`.
 
+## The guide PDF
+
+"Your Money, Your Future" is laid out in `guide/your-money-your-future.html`. After editing it, regenerate the PDF (needs Google Chrome) and commit the result:
+
+```bash
+sh guide/build-pdf.sh
+```
+
 ## Preview locally
 
 ```bash

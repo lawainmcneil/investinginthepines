@@ -52,7 +52,7 @@ const sprig = (() => {
 const ext = 'target="_blank" rel="noopener"';
 
 function layout({ file, title, description, body, current = file, image = "share.jpg", extraHead = "", extraFoot = "" }) {
-  const url = file === "index.html" ? `${SITE}/` : `${SITE}/${file}`;
+  const url = file === "index.html" ? `${SITE}/` : `${SITE}/${file.replace(".html", "")}`;
   const nav = NAV.map(
     ([href, label]) => `<a href="${href}"${href === current ? ' aria-current="page"' : ""}>${label}</a>`
   ).join("\n        ");
@@ -790,7 +790,7 @@ writeFileSync(
   new URL("sitemap.xml", import.meta.url),
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${listed.map((p) => `  <url><loc>${SITE}/${p.file === "index.html" ? "" : p.file}</loc></url>`).join("\n")}
+${listed.map((p) => `  <url><loc>${SITE}/${p.file === "index.html" ? "" : p.file.replace(".html", "")}</loc></url>`).join("\n")}
 </urlset>
 `
 );

@@ -26,4 +26,6 @@ python3 -m http.server 4173
 
 ## Hosting
 
-Any static host works (GitHub Pages, Cloudflare Pages, Netlify). Serve the repository root; there is no build step on the host.
+The site is hosted on Cloudflare Pages (project `investinginthepines`, https://investinginthepines.pages.dev).
+
+Every push to `main` runs `.github/workflows/deploy.yml`, which rebuilds the pages and deploys them to Cloudflare. It needs two repository secrets: `CLOUDFLARE_API_TOKEN` (a token with the "Cloudflare Pages: Edit" permission) and `CLOUDFLARE_ACCOUNT_ID`.

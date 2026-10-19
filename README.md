@@ -1,6 +1,6 @@
 # investinginthepines.com
 
-Website for Kiaros Advisors, LLC (Peter Kisver), Pinehurst, North Carolina.
+Website for Kiaros Advisors, LLC (Peter Kisver), Southern Pines, North Carolina.
 
 A plain static site: HTML, one stylesheet, a few lines of JavaScript. No framework and no dependencies.
 

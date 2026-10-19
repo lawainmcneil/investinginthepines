@@ -105,7 +105,7 @@ ${body}
       <div class="footer-grid">
         <div>
           <img src="assets/img/kiaros-logo-ivory.png" alt="Kiaros Advisors, LLC" width="504" height="144" loading="lazy">
-          <p class="footer-tag">Rooted in Pinehurst.<br>Focused on you.</p>
+          <p class="footer-tag">Rooted in Southern Pines.<br>Focused on you.</p>
         </div>
         <div>
           <h2>Explore</h2>
@@ -122,7 +122,7 @@ ${body}
           <ul>
             <li><a href="tel:+1${PHONE.replace(/-/g, "")}">${PHONE}</a></li>
             <li><a href="mailto:${EMAIL}">${EMAIL}</a></li>
-            <li>Pinehurst, North Carolina</li>
+            <li>Southern Pines, North Carolina</li>
             <li><a href="contact.html">Start a conversation</a></li>
           </ul>
         </div>
@@ -159,14 +159,14 @@ const pages = [];
 /* ------------------------------------------------------------------ Home */
 pages.push({
   file: "index.html",
-  title: "Kiaros Advisors | Financial Planning in Pinehurst, NC",
+  title: "Kiaros Advisors | Financial Planning in Southern Pines, NC",
   description:
-    "Peter Kisver of Kiaros Advisors offers financial planning and investment management in Pinehurst, North Carolina. Good advice begins with listening.",
+    "Peter Kisver of Kiaros Advisors offers financial planning and investment management in Southern Pines, North Carolina. Good advice begins with listening.",
   body: `
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <span class="eyebrow">Kiaros Advisors &middot; Pinehurst, North Carolina</span>
+          <span class="eyebrow">Kiaros Advisors &middot; Southern Pines, NC</span>
           <h1>Good advice begins with listening.</h1>
           <p class="lede">Your financial life deserves more than a plan. It deserves someone who takes the time to understand what matters most to you.</p>
           <div class="actions">
@@ -175,7 +175,7 @@ pages.push({
           </div>
         </div>
         <figure class="frame">
-          <img src="assets/img/pinehurst-street.jpg" alt="A quiet street in Pinehurst shaded by old oaks and magnolias" width="1280" height="853" fetchpriority="high">
+          <img src="assets/img/tree-lined-street.jpg" alt="A quiet street shaded by old oaks and magnolias" width="1280" height="853" fetchpriority="high">
         </figure>
       </div>
     </section>
@@ -253,7 +253,7 @@ pages.push({
           </div>
         </div>
         <figure class="frame">
-          <img src="assets/img/village-magnolia.jpg" alt="White clapboard shops, rocking chairs and azaleas in bloom in the Village of Pinehurst" width="900" height="600" loading="lazy">
+          <img src="assets/img/southern-pines-station.jpg" alt="The historic train depot in downtown Southern Pines" width="1280" height="853" loading="lazy">
         </figure>
       </div>
     </section>
@@ -293,7 +293,7 @@ pages.push({
   file: "about.html",
   title: "About Peter Kisver | Kiaros Advisors",
   description:
-    "Peter Kisver founded Kiaros Advisors in Pinehurst, NC after more than 20 years in financial services. Learn about his background and how he approaches advice.",
+    "Peter Kisver founded Kiaros Advisors in Southern Pines, NC after more than 20 years in financial services. Learn about his background and how he approaches advice.",
   body: `
     <section class="page-head">
       <div class="wrap">
@@ -360,14 +360,14 @@ pages.push({
         <div>
           <span class="eyebrow">The firm</span>
           <h2>Kiaros Advisors</h2>
-          <p>Kiaros Advisors, LLC is an independent registered investment advisory firm based in Pinehurst, North Carolina. I started it to offer the kind of advice I would want for my own family: personal, clearly explained, and free of pressure.</p>
+          <p>Kiaros Advisors, LLC is an independent registered investment advisory firm based in Southern Pines, North Carolina. I started it to offer the kind of advice I would want for my own family: personal, clearly explained, and free of pressure.</p>
           <p>Being independent means that when you work with Kiaros, you work with me.</p>
           <div class="actions">
             <a class="btn btn--ghost" href="how-i-work.html">How I work</a>
           </div>
         </div>
         <figure class="frame">
-          <img src="assets/img/village-shops.jpg" alt="Lamplit brick storefronts in the Village of Pinehurst at dusk" width="1140" height="760" loading="lazy">
+          <img src="assets/img/southern-pines-broad-street.jpg" alt="The Sunrise Theater and shops along Broad Street in downtown Southern Pines" width="1280" height="853" loading="lazy">
         </figure>
       </div>
     </section>
@@ -377,7 +377,7 @@ ${closing("I&rsquo;d welcome the chance to meet you.", "If you&rsquo;re looking 
 /* ------------------------------------------------------------ How I Work */
 pages.push({
   file: "how-i-work.html",
-  title: "How I Work | Kiaros Advisors, Pinehurst NC",
+  title: "How I Work | Kiaros Advisors, Southern Pines NC",
   description:
     "How Peter Kisver works with clients at Kiaros Advisors: a first conversation, a clear written plan, a disciplined investment approach, and an ongoing relationship.",
   body: `
@@ -454,7 +454,7 @@ pages.push({
     <section class="section">
       <div class="wrap split">
         <figure class="frame frame--left">
-          <img src="assets/img/pinehurst-street.jpg" alt="Sunlight through old oaks over a residential street in Pinehurst" width="1280" height="853" loading="lazy">
+          <img src="assets/img/tree-lined-street.jpg" alt="Sunlight through old oaks over a quiet residential street" width="1280" height="853" loading="lazy">
         </figure>
         <div>
           <span class="eyebrow">The relationship</span>
@@ -475,7 +475,7 @@ pages.push({
   file: "what-i-do.html",
   title: "What I Do | Financial Planning & Investment Management | Kiaros Advisors",
   description:
-    "Retirement and financial planning, investment management, tax-aware strategy, and family and legacy considerations from Kiaros Advisors in Pinehurst, NC.",
+    "Retirement and financial planning, investment management, tax-aware strategy, and family and legacy considerations from Kiaros Advisors in Southern Pines, NC.",
   body: `
     <section class="page-head">
       <div class="wrap">
@@ -585,9 +585,9 @@ ${closing("Not sure where your question fits?", "That&rsquo;s perfectly fine. Mo
 /* ------------------------------------------------------------- Insurance */
 pages.push({
   file: "insurance.html",
-  title: "Life Insurance | Kiaros Advisors, Pinehurst NC",
+  title: "Life Insurance | Kiaros Advisors, Southern Pines NC",
   description:
-    "Life insurance protects the people who depend on you. See what term coverage could cost with the Ethos Estimator, then talk it through with Peter Kisver in Pinehurst, NC.",
+    "Life insurance protects the people who depend on you. See what term coverage could cost with the Ethos Estimator, then talk it through with Peter Kisver in Southern Pines, NC.",
   body: `
     <section class="page-head">
       <div class="wrap">
@@ -665,9 +665,9 @@ ${closing("Have questions about coverage?", "Try the estimator, or call me and w
 /* -------------------------------------------------------------- Insights */
 pages.push({
   file: "insights.html",
-  title: "Insights | Kiaros Advisors, Pinehurst NC",
+  title: "Insights | Kiaros Advisors, Southern Pines NC",
   description:
-    "Articles, a monthly newsletter, and a free financial planning guide from Peter Kisver of Kiaros Advisors in Pinehurst, North Carolina.",
+    "Articles, a monthly newsletter, and a free financial planning guide from Peter Kisver of Kiaros Advisors in Southern Pines, North Carolina.",
   body: `
     <section class="page-head">
       <div class="wrap">
@@ -799,9 +799,9 @@ ${closing("Wondering whether your plan is built for days like these?", "Let&rsqu
 /* --------------------------------------------------------------- Contact */
 pages.push({
   file: "contact.html",
-  title: "Contact | Kiaros Advisors, Pinehurst NC",
+  title: "Contact | Kiaros Advisors, Southern Pines NC",
   description:
-    "Start a conversation with Peter Kisver of Kiaros Advisors in Pinehurst, North Carolina. Call 910-420-0352 or request a consultation online.",
+    "Start a conversation with Peter Kisver of Kiaros Advisors in Southern Pines, North Carolina. Call 910-420-0352 or request a consultation online.",
   extraFoot: `
   <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
   <script>if (window.jotformEmbedHandler) window.jotformEmbedHandler("iframe[id='JotFormIFrame-${FORM_ID}']", "https://form.jotform.com/");</script>`,
@@ -820,7 +820,7 @@ pages.push({
           <ul class="contact-list">
             <li><span class="label">Phone</span><a href="tel:+1${PHONE.replace(/-/g, "")}">${PHONE}</a></li>
             <li><span class="label">Email</span><a href="mailto:${EMAIL}">${EMAIL}</a></li>
-            <li><span class="label">Location</span><span class="value">Pinehurst, North Carolina</span></li>
+            <li><span class="label">Location</span><span class="value">Southern Pines, North Carolina</span></li>
           </ul>
           <h3>What happens next</h3>
           <p>We&rsquo;ll find a time to talk, in person or by phone. There&rsquo;s nothing to prepare and no obligation. Bring your questions, and I&rsquo;ll bring a few of my own.</p>
@@ -839,7 +839,7 @@ pages.push({
       <img src="assets/img/longleaf-canopy.jpg" alt="" width="1600" height="1200" loading="lazy">
       <div class="wrap">
         <blockquote>
-          <p>Rooted in Pinehurst. Focused on you.</p>
+          <p>Rooted in Southern Pines. Focused on you.</p>
         </blockquote>
       </div>
     </section>`,

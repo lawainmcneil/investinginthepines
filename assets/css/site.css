@@ -222,6 +222,9 @@ p:last-child { margin-bottom: 0; }
 .split--top { align-items: start; }
 .split .frame img { aspect-ratio: 4 / 3; }
 .split .frame--tall img { aspect-ratio: 4 / 5; }
+/* Portrait photo: kept near its native size so it stays sharp. */
+.split .frame--portrait { max-width: 300px; justify-self: center; }
+.split .frame--portrait img { aspect-ratio: auto; }
 @media (max-width: 860px) {
   .split { grid-template-columns: 1fr; }
   .split .frame { margin-right: 18px; }

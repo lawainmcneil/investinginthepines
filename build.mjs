@@ -22,8 +22,10 @@ const ETHOS = "https://agents.ethoslife.com/invite/bfaa5";
 // Newest first. Add each new issue to the top of this list.
 // Issues hosted on this site live in assets/newsletters/.
 const NEWSLETTERS = [
+  ["October", "2026", "assets/newsletters/kiaros-newsletter-2026-10.pdf"],
   ["September", "2026", "assets/newsletters/kiaros-newsletter-2026-09.pdf"],
-  ["July", "2026", "https://kiarosjuly2026.pages.dev"],
+  ["August", "2026", "assets/newsletters/kiaros-newsletter-2026-08.pdf"],
+  ["July", "2026", "assets/newsletters/kiaros-newsletter-2026-07.pdf"],
   ["June", "2026", "https://drive.google.com/file/d/1dM-2vEOiWAUmp31BIep92Wud2FOQgtNR/view"],
   ["May", "2026", "https://drive.google.com/file/d/18XA23ScKNi4lKDaSz53EMsSrQDuj09xn/view"],
   ["April", "2026", "https://drive.google.com/file/d/1U9uDRAa6gT2-Ywnb4pX_ijWljIbAElX1/view"],
@@ -35,16 +37,17 @@ const NEWSLETTERS = [
 
 // The issue featured on the Insights page, with a download button.
 const LATEST = {
-  month: "September",
+  month: "October",
   year: "2026",
-  pdf: "assets/newsletters/kiaros-newsletter-2026-09.pdf",
+  pdf: "assets/newsletters/kiaros-newsletter-2026-10.pdf",
   topics: [
-    "Macro overview: inflation, Treasury yields, and a $40 trillion national debt",
-    "Treasury yields rise in August",
-    "How companies and the U.S. government are competing for capital",
-    "Labor share of GDP falls to its lowest since 1947",
-    "How IRMAA affects your Medicare premium",
-    "U.S. leads in projected global growth",
+    "Macro overview: AI, oil flows through the Strait of Hormuz, and falling consumer sentiment",
+    "Equities endure volatility as AI stocks lead the S&amp;P 500",
+    "The Fed leans toward more rate hikes",
+    "Wages are not keeping up with inflation",
+    "Gasoline prices aren&rsquo;t as bad as they appear",
+    "Home price cuts on the rise",
+    "U.S. refineries running at nearly full capacity",
   ],
 };
 

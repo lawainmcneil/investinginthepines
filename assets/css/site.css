@@ -222,9 +222,19 @@ p:last-child { margin-bottom: 0; }
 .split--top { align-items: start; }
 .split .frame img { aspect-ratio: 4 / 3; }
 .split .frame--tall img { aspect-ratio: 4 / 5; }
-/* Portrait photo: kept near its native size so it stays sharp. */
-.split .frame--portrait { max-width: 300px; justify-self: center; }
-.split .frame--portrait img { aspect-ratio: auto; }
+/* Place photo with Peter's portrait layered over its corner.
+   The portrait stays near its native size so it remains sharp. */
+.duo { position: relative; margin: 0 0 56px; padding-right: 18%; }
+.duo::before { content: ""; position: absolute; top: 18px; left: -18px; right: calc(18% + 18px); bottom: -18px; border: 1px solid var(--bronze); }
+.duo-place { position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 70% center; }
+.duo-portrait {
+  position: absolute; right: 0; bottom: -56px; width: 46%; max-width: 230px; height: auto;
+  border: 8px solid var(--ivory); box-shadow: 0 10px 30px rgba(36, 55, 47, 0.18);
+}
+@media (max-width: 860px) {
+  .duo { margin-left: 18px; }
+  .duo-place { aspect-ratio: 4 / 3; }
+}
 @media (max-width: 860px) {
   .split { grid-template-columns: 1fr; }
   .split .frame { margin-right: 18px; }

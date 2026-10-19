@@ -2,7 +2,14 @@
 // Run `node build.mjs` after editing; it rewrites the .html files in this folder.
 // No dependencies. The header, footer and disclosures live here once so every page stays in step.
 
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+
+// Fingerprint the stylesheet and script so browsers fetch the new version after every change.
+const version = (path) =>
+  createHash("sha1").update(readFileSync(new URL(path, import.meta.url))).digest("hex").slice(0, 10);
+const CSS_V = version("assets/css/site.css");
+const JS_V = version("assets/js/site.js");
 
 const SITE = "https://investinginthepines.com";
 const PHONE = "910-420-0352";
@@ -95,7 +102,7 @@ function layout({ file, title, description, body, current = file, image = "share
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css">${extraHead}
+  <link rel="stylesheet" href="assets/css/site.css?v=${CSS_V}">${extraHead}
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -152,7 +159,7 @@ ${body}
     </div>
   </footer>
 
-  <script src="assets/js/site.js" defer></script>${extraFoot}
+  <script src="assets/js/site.js?v=${JS_V}" defer></script>${extraFoot}
 </body>
 </html>
 `;
@@ -322,8 +329,9 @@ pages.push({
 
     <section class="section section--tight">
       <div class="wrap split split--top">
-        <figure class="frame frame--left frame--portrait">
-          <img src="assets/img/peter-kisver.jpg" alt="Peter Kisver, founder of Kiaros Advisors" width="222" height="300">
+        <figure class="duo">
+          <img class="duo-place" src="assets/img/carolina-lawn.jpg" alt="Magnolias and a wide green lawn in Pinehurst, where Peter lives" width="1280" height="853">
+          <img class="duo-portrait" src="assets/img/peter-kisver.jpg" alt="Peter Kisver, founder of Kiaros Advisors" width="222" height="300">
         </figure>
         <div>
           <h2>More than twenty years of sitting across the table.</h2>

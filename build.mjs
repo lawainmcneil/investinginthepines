@@ -13,7 +13,9 @@ const GUIDE = "assets/guide/Your-Money-Your-Future.pdf";
 const ETHOS = "https://agents.ethoslife.com/invite/bfaa5";
 
 // Newest first. Add each new issue to the top of this list.
+// Issues hosted on this site live in assets/newsletters/.
 const NEWSLETTERS = [
+  ["September", "2026", "assets/newsletters/kiaros-newsletter-2026-09.pdf"],
   ["July", "2026", "https://kiarosjuly2026.pages.dev"],
   ["June", "2026", "https://drive.google.com/file/d/1dM-2vEOiWAUmp31BIep92Wud2FOQgtNR/view"],
   ["May", "2026", "https://drive.google.com/file/d/18XA23ScKNi4lKDaSz53EMsSrQDuj09xn/view"],
@@ -23,6 +25,21 @@ const NEWSLETTERS = [
   ["January", "2026", "https://drive.google.com/file/d/15snPkUtmXvUTRD81uTRU8H0H7oS8jEtE/view"],
   ["December", "2025", "https://drive.google.com/file/d/1lS2N9DCqWl3LvzQUrBZSxgz_QgZVhQ_H/view"],
 ];
+
+// The issue featured on the Insights page, with a download button.
+const LATEST = {
+  month: "September",
+  year: "2026",
+  pdf: "assets/newsletters/kiaros-newsletter-2026-09.pdf",
+  topics: [
+    "Macro overview: inflation, Treasury yields, and a $40 trillion national debt",
+    "Treasury yields rise in August",
+    "How companies and the U.S. government are competing for capital",
+    "Labor share of GDP falls to its lowest since 1947",
+    "How IRMAA affects your Medicare premium",
+    "U.S. leads in projected global growth",
+  ],
+};
 
 const NAV = [
   ["index.html", "Home"],
@@ -698,10 +715,28 @@ pages.push({
         <div class="narrow">
           <span class="eyebrow">Monthly newsletter</span>
           <h2>The Kiaros newsletter</h2>
-          <p>Once a month I put together a short newsletter for clients and friends of the firm. Recent issues are below.</p>
+          <p>Once a month I put together a short newsletter for clients and friends of the firm, covering markets, the economy, and planning topics worth knowing about.</p>
         </div>
+        <div class="latest">
+          <div>
+            <span class="eyebrow">Latest issue</span>
+            <h3>${LATEST.month} ${LATEST.year}</h3>
+            <p>Market figures as of the end of the prior month, plus the stories behind them.</p>
+            <div class="actions">
+              <a class="btn" href="${LATEST.pdf}" download>Download the ${LATEST.month} PDF</a>
+              <a class="textlink" href="${LATEST.pdf}" ${ext}>Read online</a>
+            </div>
+          </div>
+          <div>
+            <span class="eyebrow">Inside this issue</span>
+            <ul class="topics">
+              ${LATEST.topics.map((t) => `<li>${t}</li>`).join("\n              ")}
+            </ul>
+          </div>
+        </div>
+        <h3 class="archive-title">Past issues</h3>
         <ul class="archive">
-          ${NEWSLETTERS.map(
+          ${NEWSLETTERS.slice(1).map(
             ([m, y, href]) =>
               `<li><a href="${href}" ${ext}><span class="month">${m}</span><span class="year">${y}</span></a></li>`
           ).join("\n          ")}

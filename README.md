@@ -14,7 +14,7 @@ node build.mjs
 
 That rewrites the `.html` files and `sitemap.xml`. Commit the result.
 
-- **New monthly newsletter:** add a line to the top of `NEWSLETTERS` in `build.mjs`.
+- **New monthly newsletter:** save the PDF as `assets/newsletters/kiaros-newsletter-YYYY-MM.pdf`, add a line to the top of `NEWSLETTERS` in `build.mjs`, and update `LATEST` (month, year, PDF path, and the "Inside this issue" headlines). The previous issue moves into "Past issues" automatically.
 - **Styles:** `assets/css/site.css` (palette and fonts are variables at the top).
 - **Images:** `assets/img/`.
 
